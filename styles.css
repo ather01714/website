@@ -1,0 +1,637 @@
+/* --- Variables & Reset --- */
+:root {
+    --primary-blue: #004aad;
+    --golden-yellow: #DAA520; /* GoldenRod */
+    --white: #ffffff;
+    --text-dark: #333;
+    --bg-light: #f4f4f4;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    cursor: pointer;
+}
+
+.main-logo {
+    height: 60px;
+}
+
+.institute-identity {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.institute-name {
+    color: var(--golden-yellow);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.eiin {
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* --- UPDATED NAV MENU ANIMATION --- */
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    position: relative;
+    padding: 8px 15px; /* Added padding for the box effect */
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+/* Create top and bottom borders */
+.nav-link::before,
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--golden-yellow);
+    transition: width 0.3s ease-out;
+}
+
+.nav-link::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-link::after {
+    bottom: 0;
+    right: 0;
+}
+
+/* Create left and right borders using a wrapper approach or pseudo manipulation.
+   Simpler approach for box effect using box-shadow or more pseudos. 
+   Here is a full box drawing animation effect: */
+   
+.nav-link:hover {
+    color: var(--primary-blue);
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Add side borders using box-shadow for a clean box effect on hover */
+.nav-link:hover {
+    box-shadow: inset 2px 0 0 0 var(--golden-yellow), inset -2px 0 0 0 var(--golden-yellow); 
+    /* This creates the vertical sides appearing instantly or can be transitioned if desired.
+       Let's stick to the top/bottom drawing lines as they are elegant, or a full border: */
+}
+
+/* Alternative: Full border "Outward" expansion */
+.nav-link {
+    border: 2px solid transparent; /* Reserve space */
+}
+
+.nav-link:hover {
+    border-color: var(--golden-yellow);
+    background-color: rgba(218, 165, 32, 0.05); /* Slight tint */
+    border-radius: 4px;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-dark);
+    margin: 3px 0;
+}
+
+/* --- Notice Bar --- */
+.notice-bar {
+    background: var(--primary-blue);
+    color: var(--white);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    font-weight: 600;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+/* Animated Background Icons */
+.tech-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-icon {
+    position: absolute;
+    color: var(--golden-yellow);
+    opacity: 0.6;
+    font-size: 3rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.floating-icon:nth-child(2) { top: 20%; right: 20%; animation-delay: 1s; }
+.floating-icon:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 2s; }
+.floating-icon:nth-child(4) { bottom: 30%; right: 10%; animation-delay: 3s; }
+.floating-icon:nth-child(5) { top: 50%; left: 50%; font-size: 5rem; opacity: 0.3; }
+.floating-icon:nth-child(6) { top: 80%; left: 5%; animation-delay: 1.5s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid var(--golden-yellow);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.bangla-text {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.english-text {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    padding: 12px 30px;
+    background: var(--golden-yellow);
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: #c5931a;
+}
+
+/* --- Common Section Styles --- */
+.section-padding {
+    padding: 60px 5%;
+}
+.section-title {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 40px;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: var(--golden-yellow);
+    margin: 10px auto 0;
+}
+.bg-light { background-color: var(--bg-light); }
+
+/* --- Courses --- */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card.active {
+    border: 2px solid var(--primary-blue);
+    transform: scale(1.05);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--golden-yellow);
+    margin-bottom: 15px;
+}
+
+.affiliate {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.btn-sm {
+    padding: 8px 15px;
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.course-card.blur {
+    filter: blur(2px);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.7);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* --- Notices --- */
+.notice-list {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.notice-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    transition: padding-left 0.3s;
+}
+
+.notice-item:hover {
+    padding-left: 10px;
+    background: #fdfdfd;
+}
+
+.notice-item a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.notice-item .date {
+    color: var(--golden-yellow);
+    font-weight: bold;
+    margin-right: 15px;
+    min-width: 90px;
+}
+
+/* --- Gallery (Infinite Slide) --- */
+.gallery-slider {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.gallery-track {
+    display: flex;
+    animation: slideRightToLeft 20s linear infinite;
+}
+
+.slide-img {
+    min-width: 250px;
+    height: 180px;
+    background: #ddd;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: var(--primary-blue);
+}
+
+.slide-img i { font-size: 3rem; margin-bottom: 10px; }
+
+@keyframes slideRightToLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* --- Director --- */
+.director-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.director-img {
+    flex: 1;
+    text-align: center;
+}
+.director-img img {
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--golden-yellow);
+}
+
+.director-info {
+    flex: 2;
+}
+
+.typing-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.points-list {
+    list-style: none;
+    margin-top: 15px;
+}
+.points-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+.points-list i {
+    color: var(--golden-yellow);
+    margin-right: 10px;
+}
+
+/* --- Address --- */
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.branch-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.map-container {
+    margin-top: 15px;
+    border: 2px solid var(--golden-yellow);
+}
+
+.highlight-note {
+    margin-top: 10px;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* --- Footer --- */
+.footer-section {
+    background: #222;
+    color: #fff;
+    padding: 50px 5% 10px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-content h3 {
+    color: var(--golden-yellow);
+    margin-bottom: 20px;
+}
+
+.contact-col a, .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.contact-col a:hover, .social-icons a:hover {
+    color: var(--golden-yellow);
+}
+
+.approval-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.approval-item i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: var(--golden-yellow);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icons i { font-size: 1.8rem; }
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+
+.admin-login-link a { color: #666; text-decoration: none; font-size: 0.8rem;}
+
+/* --- Modals --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 2px solid var(--golden-yellow);
+    position: relative;
+    animation: fadeIn 0.4s;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-btn {
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.call-btn { background-color: var(--primary-blue); }
+.wa-btn { background-color: #25D366; }
+
+.online-process { margin-top: 20px; font-weight: bold; }
+.blink { animation: blink 1s infinite; color: red; }
+
+/* Admin Modal */
+.admin-box input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.robot-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* --- Scroll Animation Class --- */
+.scroll-anim {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+.scroll-anim.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    header { flex-direction: column; padding: 10px; }
+    .institute-identity { margin: 10px 0; }
+    .menu-toggle { display: flex; position: absolute; right: 20px; top: 20px; }
+    
+    .nav-menu {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-menu.active { display: block; }
+    .nav-menu ul { flex-direction: column; gap: 10px; padding: 10px 0; }
+
+    .director-container { flex-direction: column; }
+    .footer-bottom { justify-content: center; gap: 10px; text-align: center; }
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norshunda Computer Training Centre</title>
+    <meta name="description" content="Norshunda Computer Training Centre - Approved by BTEB. Best Computer Training Institute.">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="logo-container" onclick="location.reload()">
+            <img src="Nctc_logo.jpg" alt="NCTC Logo" class="main-logo">
+        </div>
+        
+        <div class="institute-identity">
+            <h1 class="institute-name">Norshunda Computer Training Centre</h1>
+            <p class="eiin">EIIN: 50744</p>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#courses" class="nav-link">Courses</a></li>
+                <li><a href="#admission" class="nav-link">Admission</a></li>
+                <li><a href="#notices" class="nav-link">Notices</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="notice-bar">
+        <div class="marquee">
+            <p>Open for Admission — Enroll Now for the Upcoming Batch! — Approved by Bangladesh Technical Education Board (BTEB)</p>
+        </div>
+    </div>
+
+    <section id="home" class="hero-section scroll-anim">
+        <div class="tech-bg">
+            <i class="fas fa-keyboard floating-icon"></i>
+            <i class="fas fa-mouse floating-icon"></i>
+            <i class="fas fa-desktop floating-icon"></i>
+            <i class="fas fa-microchip floating-icon"></i>
+            <i class="fas fa-headphones floating-icon"></i>
+            <i class="fas fa-memory floating-icon"></i>
+        </div>
+
+        <div class="hero-content">
+            <h2 class="bangla-text">নরসুন্দা কম্পিউটার ট্রেনিং সেন্টার। <br> ছাত্র-ছাত্রী ভর্তি চলছে!</h2>
+            <h3 class="english-text">OPEN ADMISSION</h3>
+            <button id="applyBtn" class="btn-primary">Apply Now</button>
+        </div>
+    </section>
+
+    <div id="admissionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>Admission Information</h2>
+            <div class="modal-actions">
+                <a href="tel:01714448414" class="modal-btn call-btn"><i class="fas fa-phone-alt"></i> Call for Admission</a>
+                <a href="https://wa.me/8801714448414" target="_blank" class="modal-btn wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <div class="online-process">
+                <p>Online Admission Process: <span class="blink">Coming Soon......</span></p>
+            </div>
+        </div>
+    </div>
+
+    <section id="courses" class="section-padding scroll-anim">
+        <h2 class="section-title"><i class="fas fa-book-open"></i> Our Courses</h2>
+        <div class="courses-grid">
+            <div class="course-card active">
+                <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Computer Office Application</h3>
+                <p><strong>Duration:</strong> 3/6 Months</p>
+                <p class="affiliate">Affiliate: BTEB</p>
+                <button class="btn-sm">Details</button>
+            </div>
+
+            <div class="course-card blur">
+                <h3>Graphic Design</h3>
+                <div class="overlay-text">Not Available This Time</div>
+            </div>
+            <div class="course-card blur">
+                <h3>Web Development</h3>
+                <div class="overlay-text">Not Available This Time</div>
+            </div>
+            <div class="course-card blur">
+                <h3>Hardware Maintenance</h3>
+                <div class="overlay-text">Not Available This Time</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="notices" class="section-padding bg-light scroll-anim">
+        <h2 class="section-title"><i class="fas fa-bell"></i> Notices</h2>
+        <div class="notice-list">
+            <div class="notice-item">
+                <span class="date">15 Dec 2025</span>
+                <a href="#">New Batch Admission Started for January Session.</a>
+            </div>
+            <div class="notice-item">
+                <span class="date">10 Dec 2025</span>
+                <a href="#">Certificate Distribution Ceremony Notice.</a>
+            </div>
+            <div class="notice-item">
+                <span class="date">05 Dec 2025</span>
+                <a href="#">Weekly Holiday Announcement.</a>
+            </div>
+            <div class="notice-item">
+                <span class="date">01 Dec 2025</span>
+                <a href="#">BTEB Exam Registration Details.</a>
+            </div>
+            <div class="notice-item">
+                <span class="date">28 Nov 2025</span>
+                <a href="#">Lab Maintenance Schedule.</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-padding scroll-anim">
+        <h2 class="section-title"><i class="fas fa-images"></i> Photo Gallery</h2>
+        <div class="gallery-slider">
+            <div class="gallery-track">
+                <div class="slide-img"><i class="fas fa-users"></i><p>Classroom</p></div>
+                <div class="slide-img"><i class="fas fa-chalkboard-teacher"></i><p>Lecture</p></div>
+                <div class="slide-img"><i class="fas fa-award"></i><p>Prize Giving</p></div>
+                <div class="slide-img"><i class="fas fa-desktop"></i><p>Computer Lab</p></div>
+                <div class="slide-img"><i class="fas fa-graduation-cap"></i><p>Convocation</p></div>
+                <div class="slide-img"><i class="fas fa-users"></i><p>Classroom</p></div>
+                <div class="slide-img"><i class="fas fa-chalkboard-teacher"></i><p>Lecture</p></div>
+                <div class="slide-img"><i class="fas fa-award"></i><p>Prize Giving</p></div>
+                <div class="slide-img"><i class="fas fa-desktop"></i><p>Computer Lab</p></div>
+                <div class="slide-img"><i class="fas fa-graduation-cap"></i><p>Convocation</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="director" class="section-padding bg-light scroll-anim">
+        <div class="director-container">
+            <div class="director-img">
+                <i class="fas fa-user-tie" style="font-size: 150px; color: var(--primary-blue);"></i>
+            </div>
+            <div class="director-info">
+                <h3>About The Institute</h3>
+                <p class="typing-text" id="typing-effect"></p>
+                <h4>Why You Should Complete Courses Here:</h4>
+                <ul class="points-list">
+                    <li><i class="fas fa-check-circle"></i> Experienced Instructors</li>
+                    <li><i class="fas fa-check-circle"></i> 1:1 Computer Ratio</li>
+                    <li><i class="fas fa-check-circle"></i> BTEB Certified Certificates</li>
+                    <li><i class="fas fa-check-circle"></i> Job Placement Support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding scroll-anim">
+        <h2 class="section-title">Our Branches</h2>
+        <div class="address-grid">
+            <div class="branch-card">
+                <h3>Branch 01</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Kishoreganj Sadar, Kishoreganj</p>
+                <div class="map-container">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902341234!2d90.39!3d23.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ1JzAwLjAiTiA5MMKwMjMnMjQuMCJF!5e0!3m2!1sen!2sbd!4v1600000000000!5m2!1sen!2sbd" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="branch-card">
+                <h3>Branch 02</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Station Road, Kishoreganj</p>
+                <div class="map-container">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902341234!2d90.39!3d23.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ1JzAwLjAiTiA5MMKwMjMnMjQuMCJF!5e0!3m2!1sen!2sbd!4v1600000000000!5m2!1sen!2sbd" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <p class="highlight-note">1st & 2nd Branch Included</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="contact-col">
+                <h3>Contact Us</h3>
+                <p><a href="tel:01714448414"><i class="fas fa-phone-square-alt"></i> 01714-448414</a></p>
+                <p><a href="mailto:ather001.ali@gmail.com"><i class="fas fa-envelope-open-text"></i> ather001.ali@gmail.com</a></p>
+            </div>
+            
+            <div class="approval-col">
+                <h3>Approved By</h3>
+                <div class="approval-item">
+                    <i class="fas fa-university"></i>
+                    <p><strong>Bangladesh Education Ministry</strong></p>
+                </div>
+                <div class="approval-item">
+                    <i class="fas fa-certificate"></i>
+                    <p><strong>Technical Education Board (BTEB)</strong></p>
+                </div>
+            </div>
+
+            <div class="social-col">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="mailto:ather001.ali@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/8801714448414"><i class="fab fa-whatsapp-square"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="creator">
+                <span>Creator: WebDev Team</span>
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Norshunda Computer Training Centre. All Rights Reserved.</p>
+            </div>
+            <div class="admin-login-link">
+                <a href="#" id="adminLoginBtn">Admin Login</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="adminModal" class="modal">
+        <div class="modal-content admin-box">
+            <span class="close-modal" id="closeAdmin">×</span>
+            <h2>Admin Login</h2>
+            <form>
+                <input type="text" placeholder="User ID" required>
+                <input type="password" placeholder="Password" required>
+                <div class="robot-check">
+                    <input type="checkbox" id="robot" required>
+                    <label for="robot">I'm not a robot</label>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
